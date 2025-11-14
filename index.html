@@ -76,6 +76,26 @@
         In just one week, they typically go from poor ad performance to a conversion-ready funnel.
       </p>
 
+      <!-- 🚀 Auto-Scrolling Carousel -->
+      <div class="relative w-full overflow-hidden rounded-2xl border border-gray-700 mb-10">
+        <div id="carouselTrack" class="flex gap-4 py-6 animate-scroll">
+          <!-- Each image -->
+          <img src="1.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="2.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="3.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="4.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="5.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+
+          <!-- Duplicate for seamless infinite scroll -->
+          <img src="1.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="2.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="3.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="4.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+          <img src="5.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+        </div>
+      </div>
+
+      <!-- Stats Boxes -->
       <div class="grid md:grid-cols-2 gap-6 mb-6">
         <div class="bg-indigo-600/20 border-l-4 border-indigo-400 p-6 rounded-xl shadow-inner">
           <p class="text-lg text-gray-200 font-medium">📊 Industry Benchmark</p>
@@ -109,6 +129,24 @@
     </div>
   </div>
 </section>
+
+<!-- Carousel Animation -->
+<style>
+  @keyframes scroll-horizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    animation: scroll-horizontal 35s linear infinite;
+  }
+
+  /* Pause on hover */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>
+
 
 
   <section class="py-20 px-6 bg-gray-900">
