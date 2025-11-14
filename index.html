@@ -77,23 +77,23 @@
       </p>
 
       <!-- 🚀 Auto-Scrolling Carousel -->
-      <div class="relative w-full overflow-hidden rounded-2xl border border-gray-700 mb-10">
-        <div id="carouselTrack" class="flex gap-4 py-6 animate-scroll">
-          <!-- Each image -->
-          <img src="1.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="2.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="3.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="4.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="5.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
+      <div class="w-full overflow-hidden rounded-3xl border border-gray-700 mt-12">
+  <div id="carouselTrack" class="flex whitespace-nowrap">
+    <img src="1.png" class="h-[450px] object-contain mx-4" />
+    <img src="2.png" class="h-[450px] object-contain mx-4" />
+    <img src="3.png" class="h-[450px] object-contain mx-4" />
+    <img src="4.png" class="h-[450px] object-contain mx-4" />
+    <img src="5.png" class="h-[450px] object-contain mx-4" />
 
-          <!-- Duplicate for seamless infinite scroll -->
-          <img src="1.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="2.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="3.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="4.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-          <img src="5.png" class="h-72 md:h-96 object-contain flex-shrink-0 rounded-xl bg-gray-950 p-4" />
-        </div>
-      </div>
+    <!-- duplicated to achieve infinite loop -->
+    <img src="1.png" class="h-[450px] object-contain mx-4" />
+    <img src="2.png" class="h-[450px] object-contain mx-4" />
+    <img src="3.png" class="h-[450px] object-contain mx-4" />
+    <img src="4.png" class="h-[450px] object-contain mx-4" />
+    <img src="5.png" class="h-[450px] object-contain mx-4" />
+  </div>
+</div>
+
 
       <!-- Stats Boxes -->
       <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -366,5 +366,23 @@
       });
     }
   </script>
+
+  <script>
+  const track = document.getElementById("carouselTrack");
+  let speed = 1.5; // increase for even faster scrolling
+  let position = 0;
+
+  function loop() {
+    position -= speed;
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+      position = 0;
+    }
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+</script>
+
 </body>
 </html>
